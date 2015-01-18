@@ -1,0 +1,209 @@
+###############################################################################
+#
+# IAR ELF Linker V7.20.2.7424/W32 for ARM                 18/Jan/2015  15:32:51
+# Copyright 2007-2014 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\Jackie\Documents\IAR Embedded
+#        Workbench\Auth\Test2\TivaWare\examples\boards\ek-tm4c123gxl\hello\ewarm\Exe\hello.out
+#    Map file     =  
+#        C:\Users\Jackie\Documents\IAR Embedded
+#        Workbench\Auth\Test2\TivaWare\examples\boards\ek-tm4c123gxl\hello\ewarm\List\hello.map
+#    Command line =  
+#        "C:\Users\Jackie\Documents\IAR Embedded
+#        Workbench\Auth\Test2\TivaWare\driverlib\ewarm\Exe\driverlib.a"
+#        "C:\Users\Jackie\Documents\IAR Embedded
+#        Workbench\Auth\Test2\TivaWare\examples\boards\ek-tm4c123gxl\hello\ewarm\Obj\hello.o"
+#        "C:\Users\Jackie\Documents\IAR Embedded
+#        Workbench\Auth\Test2\TivaWare\examples\boards\ek-tm4c123gxl\hello\ewarm\Obj\startup.o"
+#        "C:\Users\Jackie\Documents\IAR Embedded
+#        Workbench\Auth\Test2\TivaWare\examples\boards\ek-tm4c123gxl\hello\ewarm\Obj\uartstdio.o"
+#        --redirect _Printf=_PrintfTiny --redirect _Scanf=_ScanfSmall -o
+#        "C:\Users\Jackie\Documents\IAR Embedded
+#        Workbench\Auth\Test2\TivaWare\examples\boards\ek-tm4c123gxl\hello\ewarm\Exe\hello.out"
+#        --map "C:\Users\Jackie\Documents\IAR Embedded
+#        Workbench\Auth\Test2\TivaWare\examples\boards\ek-tm4c123gxl\hello\ewarm\List\hello.map"
+#        --config "C:\Users\Jackie\Documents\IAR Embedded
+#        Workbench\Auth\Test2\TivaWare\examples\boards\ek-tm4c123gxl\hello\hello.icf"
+#        --semihosting --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at start of [0x00000000-0x0003ffff] { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x0003ffff] { ro };
+"P2":  place in [from 0x20000000 to 0x20007fff] { rw, block HEAP };
+
+  Section          Kind        Address   Size  Object
+  -------          ----        -------   ----  ------
+"A1":                                   0x26c
+  .intvec          const    0x00000000  0x26c  startup.o [1]
+                          - 0x0000026c  0x26c
+
+"P1":                                   0x5dc
+  .text            ro code  0x0000026c  0x264  uartstdio.o [1]
+  .text            ro code  0x000004d0   0x66  ABImemset.o [6]
+  .text            ro code  0x00000536   0x22  zero_init3.o [6]
+  .text            ro code  0x00000558  0x13c  sysctl.o [4]
+  .text            ro code  0x00000694   0xe4  hello.o [1]
+  .text            ro code  0x00000778    0x6  uart.o [4]
+  .text            ro code  0x00000780    0x6  gpio.o [4]
+  .text            ro code  0x00000788   0x28  data_init.o [6]
+  .iar.init_table  const    0x000007b0   0x10  - Linker created -
+  .text            ro code  0x000007c0   0x1a  startup.o [1]
+  .text            ro code  0x000007da    0xc  cstartup_M.o [6]
+  .text            ro code  0x000007e8   0x1a  fpinit_M.o [5]
+  .text            ro code  0x00000804   0x1a  cmain.o [6]
+  .text            ro code  0x0000081e    0x4  low_level_init.o [3]
+  .text            ro code  0x00000822    0x4  exit.o [3]
+  .text            ro code  0x00000828    0xa  cexit.o [6]
+  .text            ro code  0x00000834   0x14  exit.o [7]
+  .rodata          const    0x00000848    0x0  zero_init3.o [6]
+                          - 0x00000848  0x5dc
+
+"P2":                                   0x208
+  .bss             zero     0x20000000    0x8  uartstdio.o [1]
+  .noinit          uninit   0x20000008  0x200  startup.o [1]
+                          - 0x20000208  0x208
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x8:
+          0x20000000   0x8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+C:\Users\Jackie\Documents\IAR Embedded Workbench\Auth\Test2\TivaWare\examples\boards\ek-tm4c123gxl\hello\ewarm\Obj: [1]
+    hello.o               228
+    startup.o              26      620      512
+    uartstdio.o           612                 8
+    -------------------------------------------
+    Total:                866      620      520
+
+command line: [2]
+    -------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+driverlib.a: [4]
+    gpio.o                  6
+    sysctl.o              316
+    uart.o                  6
+    -------------------------------------------
+    Total:                328
+
+m7M_tlv.a: [5]
+    fpinit_M.o             26
+    -------------------------------------------
+    Total:                 26
+
+rt7M_tl.a: [6]
+    ABImemset.o           102
+    cexit.o                10
+    cmain.o                26
+    cstartup_M.o           12
+    data_init.o            40
+    zero_init3.o           34
+    -------------------------------------------
+    Total:                224
+
+shb_l.a: [7]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                   12
+    Linker created                  16
+-----------------------------------------------
+    Grand Total:        1 484      636      520
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                    Address   Size  Type      Object
+-----                    -------   ----  ----      ------
+?main                 0x00000805         Code  Gb  cmain.o [6]
+ConfigureUART         0x00000695   0x4a  Code  Gb  hello.o [1]
+FaultISR              0x000007d7    0x2  Code  Lc  startup.o [1]
+GPIOPinWrite          0x00000781    0x6  Code  Gb  gpio.o [4]
+IntDefaultHandler     0x000007d9    0x2  Code  Lc  startup.o [1]
+NmiSR                 0x000007d5    0x2  Code  Lc  startup.o [1]
+Region$$Table$$Base   0x000007b0          --   Gb  - Linker created -
+Region$$Table$$Limit  0x000007c0          --   Gb  - Linker created -
+ResetISR              0x000007c1    0xe  Code  Gb  startup.o [1]
+SysCtlClockGet        0x00000561   0xbc  Code  Gb  sysctl.o [4]
+SysCtlDelay           0x00000559    0x8  Code  Gb  sysctl.o [4]
+UARTClockSourceSet    0x00000779    0x6  Code  Gb  uart.o [4]
+UARTStdioConfig       0x0000026d   0x50  Code  Gb  uartstdio.o [1]
+UARTprintf            0x0000048f    0xe  Code  Gb  uartstdio.o [1]
+UARTvprintf           0x000002f3  0x184  Code  Gb  uartstdio.o [1]
+UARTwrite             0x000002bd   0x36  Code  Gb  uartstdio.o [1]
+__aeabi_memset        0x000004d1         Code  Gb  ABImemset.o [6]
+__as_entries_start    0xffffffff          --   Gb  command line/config [2]
+__as_table_start      0xffffffff          --   Gb  command line/config [2]
+__cmain               0x00000805         Code  Gb  cmain.o [6]
+__exit                0x00000835   0x14  Code  Gb  exit.o [7]
+__iar_Memset          0x000004d1         Code  Gb  ABImemset.o [6]
+__iar_Memset_word     0x000004d9         Code  Gb  ABImemset.o [6]
+__iar_data_init3      0x00000789   0x28  Code  Gb  data_init.o [6]
+__iar_init_vfp        0x000007e9         Code  Gb  fpinit_M.o [5]
+__iar_program_start   0x000007db         Code  Gb  cstartup_M.o [6]
+__iar_zero_init3      0x00000537   0x22  Code  Gb  zero_init3.o [6]
+__low_level_init      0x0000081f    0x4  Code  Gb  low_level_init.o [3]
+__vector_table        0x00000000  0x26c  Data  Gb  startup.o [1]
+_call_main            0x00000811         Code  Gb  cmain.o [6]
+_exit                 0x00000829         Code  Gb  cexit.o [6]
+_main                 0x0000081b         Code  Gb  cmain.o [6]
+exit                  0x00000823    0x4  Code  Gb  exit.o [3]
+g_pui32Xtals          0x00000628   0x6c  Data  Lc  sysctl.o [4]
+g_ui32Base            0x20000004    0x4  Data  Lc  uartstdio.o [1]
+g_ui32UARTBase        0x000004b8    0xc  Data  Lc  uartstdio.o [1]
+g_ui32UARTPeriph      0x000004c4    0xc  Data  Lc  uartstdio.o [1]
+main                  0x000006df   0x58  Code  Gb  hello.o [1]
+pui32Stack            0x20000008  0x200  Data  Lc  startup.o [1]
+
+
+[1] = C:\Users\Jackie\Documents\IAR Embedded Workbench\Auth\Test2\TivaWare\examples\boards\ek-tm4c123gxl\hello\ewarm\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = driverlib.a
+[5] = m7M_tlv.a
+[6] = rt7M_tl.a
+[7] = shb_l.a
+
+  1 484 bytes of readonly  code memory
+    636 bytes of readonly  data memory
+    520 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
